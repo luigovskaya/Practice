@@ -1,0 +1,54 @@
+#### API::POST /flights::Отсутствует валидация поля departureDate, при пустом значении возникает 500 Internal Server Error
+
+##### Предусловия:
+
+- Авторизация Basic Auth с логином и паролем Администратора.
+  
+- В DB существуют таблицы: flight, airport, aircraft.
+  
+- Существует минимум 2 разных записи в таблице airport.
+  
+- Существует минимум 1 запись в таблице aircraft.
+  
+- Открыта страница /flight/new
+  
+
+##### Шаги:
+
+1 Отправить запрос POST {{BaseURL}}/api/v0/flights
+
+{
+
+  "flightNumber": {{FlightNumber}},
+
+  "departureAirportCode": {{DepAirCode}},
+
+  "destinationAirportCode": {{DestAirCode}},
+
+  "departureDate": "",
+
+  "arrivalDate": {{ArrDate}},
+
+  "departureTime": {{DepTime}},
+
+  "arrivalTime": {{ArrTime}},
+
+  "gate": {{Gate}},
+
+  "status": {{Status}},
+
+  "flightCharge": {{Charge}},
+
+  "aircraftId": {{AircraftID}}
+
+}
+
+| Ожидаемый результат: | Фактический результат: |
+| --- | --- |
+| {<br/><br/>    "timestamp": <CURRENT_TIME>,<br/><br/>    "status": "400 BAD_REQUEST - BAD, BAD REQUEST",<br/><br/>    "message": "Validation Failed",<br/><br/>    "details": [<br/><br/>        "departureDate \\| must not be blank"<br/><br/>    ]<br/><br/>} | {<br/><br/>    "timestamp": "2025-05-11 11:31:45:176707095 +0000",<br/><br/>    "status": "500 INTERNAL_SERVER_ERROR",<br/><br/>    "message": "Server Error",<br/><br/>    "details": [<br/><br/>        "Cannot invoke \"java.time.chrono.ChronoLocalDate.toEpochDay()\" because \"other\" is null"<br/><br/>    ]<br/><br/>} |
+
+##### Рекомендации:
+
+Добавить валидацию поля departureDate на пустое и нулевое значение.
+
+Importance Severnity
