@@ -43,15 +43,10 @@
 
 }
 
-| Ожидаемый результат:                                                                 | Фактический результат:                                                               |
-|--------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| {                                                                                    | {                                                                                     |
-|   "timestamp": <CURRENT_TIME>,                                                       |   "timestamp": "2025-05-11 11:31:45:176707095 +0000",                                 |
-|   "status": "400 BAD_REQUEST - BAD, BAD REQUEST",                                    |   "status": "500 INTERNAL_SERVER_ERROR",                                              |
-|   "message": "Validation Failed",                                                    |   "message": "Server Error",                                                          |
-|   "details": ["departureDate \\| must not be blank"]                                |   "details": ["Cannot invoke \"java.time.chrono.ChronoLocalDate.toEpochDay()\"       |
-|                                                                                      |               because \"other\" is null"]                                            |
-| }                                                                                    | }                                                                                     |
+
+| Ожидаемый результат:                                                                                                                                                                    | Фактический результат:                                                                                                                                                                                                                                 |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| {<br/>"timestamp": <CURRENT_TIME>,<br/>"status": "400 BAD_REQUEST - BAD, BAD REQUEST",<br/>"message": "Validation Failed", <br/>"details": ["departureDate \| must not be blank"]<br/>} | {<br/>"timestamp": "2025-05-11 11:31:45:176707095 +0000",<br/>"status": "500 INTERNAL_SERVER_ERROR",<br/>"message": "Server Error",<br/>"details": ["Cannot invoke \"java.time.chrono.ChronoLocalDate.toEpochDay()\"<br/> because \"other\" is null"]<br/>} |
 
 
 ##### Рекомендации:
