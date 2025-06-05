@@ -45,7 +45,7 @@
 
 | Ожидаемый результат: | Фактический результат: |
 | --- | --- |
-| {<br/>"timestamp": <CURRENT_TIME>,<br/>"status": "400 BAD_REQUEST - BAD, BAD REQUEST","message": "Validation Failed", "details": ["departureDate \\| must not be blank"]<br/><br/>} | {<br/>"timestamp": "2025-05-11 11:31:45:176707095 +0000",<br/>"status": "500 INTERNAL_SERVER_ERROR",<br/><br/>"message": "Server Error",<br/><br/>"details": ["Cannot invoke \"java.time.chrono.ChronoLocalDate.toEpochDay()\" because \"other\" is null"]<br/><br/>} |
+| {<br/>"timestamp": <CURRENT_TIME>,<br/>"status": "400 BAD_REQUEST - BAD, BAD REQUEST",<br/>"message": "Validation Failed", <br/>"details": ["departureDate \\| must not be blank"]<br/>} | {<br/>"timestamp": "2025-05-11 11:31:45:176707095 +0000",<br/>"status": "500 INTERNAL_SERVER_ERROR",<br/>"message": "Server Error",<br/>"details": ["Cannot invoke \"java.time.chrono.ChronoLocalDate.toEpochDay()\" because \"other\" is null"]<br/>} |
 
 ##### Рекомендации:
 
