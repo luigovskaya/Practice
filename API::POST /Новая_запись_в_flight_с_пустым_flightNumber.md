@@ -1,4 +1,4 @@
-API POST /flight Новая запись в flight с пустым flightNumber
+**API POST /flight Новая запись в flight с пустым flightNumber**
 
 **Предусловия:**
 
